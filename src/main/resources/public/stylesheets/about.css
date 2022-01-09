@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
+
+
+/* NAV BAR BELOW*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Streetvertising';
+    src: url("/Streetvertising.ttf");
+}
+
+body {
+    margin: 0;
+    background: #222;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+}
+
+
+
+/* navigation styles start here */
+
+header {
+    background-image: linear-gradient(to right,blue,purple);
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
+
+.head2
+{
+    background-image: linear-gradient(to right,blue,purple);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    height: 35%;
+    transform: scale(1,0);
+    transition: transform 400ms ease-in-out;
+    transform-origin: top;
+    z-index: 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    display: flex;
+
+}
+
+img {
+    width: 70px;
+    overflow: auto;
+    max-height: 100%;
+    height:auto;
+}
+
+.nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+.nav-toggle:focus ~ .nav-toggle-label {
+    outline: 3px solid rgba(0,0,100, .75);
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#fourth {
+    color: white;
+    margin-left: 5em;
+} 
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background-image: linear-gradient(to right,blue,purple);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li#first {
+    margin-left: 3em;
+    margin-bottom: 0;
+}
+nav li#second {
+    margin-left: 5em;
+    margin-bottom: 0;
+}
+nav li#third {
+    margin-left: 5em;
+    margin-bottom: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 800px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .title {
+        grid-column: 2 / 3;
+        padding-top: 9px;
+        font-family: 'Streetvertising', serif;
+    }
+
+    img {
+        width: 350px;
+        overflow: auto;
+        max-height: 100%;
+        height:auto;
+        padding-left: 250px;
+        padding-top: 9px;
+    }
+
+    nav {
+        all: unset;
+        position: relative;
+        text-align: left;
+        transition: none;
+        transform: scale(1,1);
+        background: none;
+        top: initial;
+        left: initial;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        margin-right: 2em;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        font-size: 20px;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li#first {
+        margin-left: 5em;
+        margin-bottom: 0;
+    }
+    nav li#second {
+        margin-left: 5em;
+        margin-bottom: 0;
+    }
+    nav li#third {
+        margin-left: 5em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: black;
+        position: absolute;
+        top: -.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+    }
+
+    nav a:hover::before
+    {
+        transform: scale(1,1);
+    }
+
+
+}
+
+/*//////////////////////dropdown for account below*/
+
+.drop-content
+{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    background-image: linear-gradient(to right,blue,purple);
+    overflow: auto;
+    margin-top: 10%;
+
+}
+
+
+.drop-content a
+{
+    display: block;
+    padding: 20px 20px;
+    color: black;
+}
+
+.dropbtn:hover
+{
+    cursor: pointer;
+    color: red;
+}
+
+.dropbtn
+{
+    position: relative;
+    display: none;
+    float: right;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin-right: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+
+#submit
+{
+    padding: 20px 20px;
+    font-size: 20px;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+#submit:hover
+{
+    color: red;
+}
+
+#login:hover
+{
+color: red;
+}
+
+
+#login
+{
+    padding: 20px 20px;
+    font-size: 20px;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+#logout:hover
+{
+color: red;
+}
+
+
+#logout
+{
+    padding: 20px 20px;
+    font-size: 20px;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+#profile:hover
+{
+color: red;
+}
+
+
+#profile
+{
+    padding: 20px 20px;
+    font-size: 20px;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:checked ~ div#heads
+{
+    transform: scale(1,1);
+    z-index: -3;
+}
+
+.dropbtn:checked ~ div#drops
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.droplabel:checked
+{
+    color: red;
+}
+
+#icon
+{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#icon:hover
+{
+    cursor: pointer;
+    color: red;
+}
+/*//////////////////////////////////////////
+SOCIAL DROPDOWN BELOW
+ */
+
+.SdropContent
+{
+    display: none;
+    position: absolute;
+    background: rgba(128,0,128,0.5);
+    min-width: 100%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 2em;
+}
+
+.SdropContent a
+{
+    color: white;
+    padding: 20px 20px;
+    display: block;
+}
+
+ul li
+{
+    display: inline-block;
+    position: relative;
+    line-height: 21px;
+    text-align: left;
+}
+
+
+ul li:hover ul.SdropContent
+{
+    display: block;
+}
+
+ul li ul.SdropContent li
+{
+    display: block;
+}
+
+ul li a#firstt {
+    opacity: 1;
+    position: relative;
+}
+
+ul li a#firstt::before {
+    position: absolute;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+}
+
+
+ul li a#secondd {
+    opacity: 1;
+    position: relative;
+}
+
+ul li a#secondd::before {
+    position: absolute;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+}
+
+
+
+ul li a#thirdd {
+    opacity: 1;
+    position: relative;
+}
+
+ul li a#thirdd::before {
+    position: absolute;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+}
+
+
+/******** ABOUT PAGE **********/
+
+h3
+{
+    font-size: 100px;
+    color: white;
+    padding-top: 5%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 10%;
+}
+
+#aboutHeader
+{
+    font-size: 65px;
+    color: white;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#aboutDesc
+{
+    font-size: 35px;
+    color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.aboutContent {
+    height: 200vh;
+    background-image: url(https://source.unsplash.com/collection/87542052/1000x1000);
+    background-color: #333;
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: grid;
+    
+}
+
+.aboutFeatures
+{
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 45px;
+    font-size: 30px;
+}
+
+#CG1
+{
+  color: white;
+}
+
+#FG1
+{
+   color: white;
+
+}
+#UP1
+{
+    color: white;
+}
+
+#TM1
+{
+    color: white;
+}
+
+#one1
+{
+    font-size: 25px;
+    align-content: center;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+}
+
+#two1
+{
+    font-size: 20px;
+    align-content: center;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#three1
+{
+    font-size: 20px;
+    align-content: center;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#four1
+{
+    font-size: 20px;
+    align-content: center;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
