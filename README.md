@@ -48,4 +48,4 @@ Login/Sign Up page. Bob will have the option to login if he already has an accou
 sign up and create a new account. Upon choosing the sign-up option, Bob will be asked for his
 email, and he will create a username and password for SteamLFG. After Bob has created his
 account, he will be asked to choose his gaming preferences from a list of categories. After
-listing his preferences, Bob will also be able to create a group.
+listing his preferences, Bob will also be able to create his group.
